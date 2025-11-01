@@ -1,7 +1,6 @@
 const questions = ["what is the 1", 
                     "what is the 2", 
-                    "what is the 3",
-                    "show result"];
+                    "what is the 3"];
 
 const answers = [['younes', 'anw2', 'anw3','anw4'],
                  ['youssef', '1anw2', '1anw3','1anw4'],
@@ -9,12 +8,6 @@ const answers = [['younes', 'anw2', 'anw3','anw4'],
                 ];
 const currectanwers = ["younes", "youssef", "rajix"];
 let yourAnswers = [];
-
-
-
-
-
-
 
 
 
@@ -31,34 +24,70 @@ const divButons = document.getElementById('html-answers');
 let index = 0;
 let yourAnw;
 let score = 0;
+let coor = 0;
 
 next.style.display = "none";
 divButons.style.display = "none";
+back.style.display = "none";
 
 start.addEventListener("click", startQuiz);
 next.addEventListener("click", nextQuestions);
+back.addEventListener("click", backQuestion);
+
+
 
 
 function startQuiz(){
+    while (yourAnswers.length > 0) {
+        yourAnswers.pop();
+    }
+    console.log(yourAnswers);
     start.style.display ="none";
     next.style.display = "block";
     divButons.style.display = "block";
+    back.style.display = "block"
     nextQuestions();
-
 }
+
+
+ if (index > questions.length) {
+    result();
+ }
+ 
+ function result() {
+     question.innerText = "you score is" + yourAnswers.length*100
+     divButons.style.display = "none";
+     start.style.display= "block";
+     back.style.display = "none";
+     next.style.display = "none";
+
+    
+ }
 
 function nextQuestions(){
-    question.innerText = questions[index];
     let i = 0;
+    question.innerText = questions[index];
         buttons.forEach(element => {
-            element.innerText = answers[index][i];
-            i++
-        });
-        index++;
-}
-conter()
+            if (index < questions.length ) {
+                 element.innerText = answers[index][i];
+                i++;
+                coor++;
+            }else{
+                result();
+            }
 
-function conter(){
+        });
+        if(index < questions.length){
+            index++;
+        }else{
+            index = 0
+        }
+        console.log(index);
+}
+
+count();
+
+function count(){
     let i = 0;
     buttons.forEach(e => {
         e.addEventListener("click", function(){
@@ -67,21 +96,38 @@ function conter(){
             if(e.innerText == currectanwers[index -1]  && e.innerText !== yourAnswers[index -1]){
                 yourAnswers.push(e.innerText)
                 console.log("your answwer is correct");
-                console.log("your score " + yourAnswers.length);
+                console.log(yourAnswers)
+                
+                // console.log("your score " + yourAnswers.length);
             }
         });
     });
 }
-
-
-function showResult (){
-    if (next == questions.length) {
-        next.innerText = "result";
-    }
-
+function backQuestion() {
+let i = 0;
+if (index == 0) {
+    startQuiz();
+    console.log(yourAnswers);
+    
+}
+    index--; 
+    // coor--;
+    yourAnswers.pop();
+    console.log(yourAnswers)
+    count()
+    question.innerText = questions[index-1];
+    console.log(index-1);
+    buttons.forEach(element => {
+    if (index < questions.length ) {
+            element.innerText = answers[index-1][i];
+        i++;
+    }else{
+        result();
+    }        
+});
 }
 
 
 
 
-
+    
