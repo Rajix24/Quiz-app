@@ -1,0 +1,43 @@
+questions:[
+1.Who is Kendrick Lamar‘s diss track “Not Like Us” about?
+2.Which rapper was awarded the 2018 Pulitzer prize for music?
+3.Q: Which two West Coast rappers collaborated on the hit "Nuthin' But a G Thang"?
+4.how is the best rapper in west Coast?
+
+
+]
+choice[
+   1.{
+     'Drake',
+    "Eminem",
+    "5 Cent",
+    "Dr. Dre"
+   }
+   2.{
+        "kingvon",
+        "Ice cube",
+        "Ice Spice",
+        "Kendrick Lamar"
+   }
+   3.{
+        "Ice cube & kingvon",
+        "Eminem & 5 Cent",
+        "Dr. Dre and Snoop Dogg";
+        "2pac & BIGG SMOKE"
+   }
+   4.{
+        "2PAC"
+        "BIGG SMOKE"
+        "Morphine"
+        "pause"
+   }
+]
+
+
+
+answers[
+    "Drake",
+    "Kendrick Lamar",
+    "Dr. Dre and Snoop Dogg",
+    "2pac"
+]

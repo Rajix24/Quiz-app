@@ -1,12 +1,22 @@
-const questions = ["what is the 1", 
-                    "what is the 2", 
-                    "what is the 3"];
+const questions = ["Who is Kendrick Lamar‘s diss track “Not Like Us” about?", 
+                    "Which rapper was awarded the 2018 Pulitzer prize for music?", 
+                    " Which two West Coast rappers collaborated on the hit Nuthin But a G Thang?",
+                    ];
 
-const answers = [['younes', 'anw2', 'anw3','anw4'],
-                 ['youssef', '1anw2', '1anw3','1anw4'],
-                 ['rajix', '2anw2', '2anw3','2anw4'],
+const answers = [[  'Drake',
+                    "Eminem",
+                    "5 Cent",
+                    "Dr. Dre"],
+                 [  "kingvon",
+                    "Ice cube",
+                    "Ice Spice",
+                    "Kendrick Lamar"],
+                [   "Ice cube & kingvon",
+                    "Eminem & 5 Cent",
+                    "Dr. Dre and Snoop Dogg",
+                    "2pac & BIGG SMOKE"],
                 ];
-const currectanwers = ["younes", "youssef", "rajix"];
+const currectanwers = ["Drake","Kendrick Lamar","Dr. Dre and Snoop Dogg"];
 let yourAnswers = [];
 
 
