@@ -21,6 +21,7 @@ const back = document.querySelector('#back');
 const start = document.querySelector('#start');
 const divButons = document.getElementById('html-answers');
 
+
 let index = 0;
 let yourAnw;
 let score = 0;
@@ -50,9 +51,7 @@ function startQuiz(){
 }
 
 
- if (index > questions.length) {
-    result();
- }
+
  
  function result() {
      question.innerText = "you score is" + yourAnswers.length*100
@@ -60,8 +59,6 @@ function startQuiz(){
      start.style.display= "block";
      back.style.display = "none";
      next.style.display = "none";
-
-    
  }
 
 function nextQuestions(){
@@ -71,18 +68,17 @@ function nextQuestions(){
             if (index < questions.length ) {
                  element.innerText = answers[index][i];
                 i++;
-                coor++;
             }else{
                 result();
             }
 
         });
-        if(index < questions.length){
-            index++;
-        }else{
-            index = 0
-        }
-        console.log(index);
+    if(index < questions.length){
+        index++;
+    }else{
+        index = 0
+    }
+    console.log(index);
 }
 
 count();
@@ -98,33 +94,30 @@ function count(){
                 console.log("your answwer is correct");
                 console.log(yourAnswers)
                 
-                // console.log("your score " + yourAnswers.length);
             }
         });
     });
 }
+
+
 function backQuestion() {
-let i = 0;
-if (index == 0) {
-    startQuiz();
-    console.log(yourAnswers);
-    
-}
-    index--; 
-    // coor--;
+    let i = 0;
+    index--;
+
     yourAnswers.pop();
-    console.log(yourAnswers)
     count()
+
+    if (index == 0) {
+        startQuiz();
+    }
+    
     question.innerText = questions[index-1];
-    console.log(index-1);
-    buttons.forEach(element => {
-    if (index < questions.length ) {
+    buttons.forEach(element => { 
             element.innerText = answers[index-1][i];
-        i++;
-    }else{
-        result();
-    }        
-});
+        i++;       
+    });
+
+
 }
 
 

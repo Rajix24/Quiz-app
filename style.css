@@ -123,10 +123,12 @@
     cursor : no-drop;
 }
 .q-next-back{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
+    display: grid;
+    grid-template-columns: 3fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+
 }
 .q-next-back button{
     width: 400px;
@@ -139,9 +141,12 @@
 }
 .q-back{
     border-radius: 0px 20px 20px 0px;
+    grid-column: 1/2;
+    justify-self: start;
 }
 .q-next{
     border-radius: 20px 0px 0px 20px;
+    grid-column: 3/4;
 }
 .q-next:hover:not(){
     background: #574A94;
@@ -149,4 +154,9 @@
 }.q-back:hover:not(){
     background: #574A94;
 
+}
+#start{
+    grid-column: 1/2;
+    border-radius: 20px;
+    
 }
